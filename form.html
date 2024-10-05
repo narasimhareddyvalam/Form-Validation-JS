@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application Form</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+<div class="container">
+    <h2>Job Application Form</h2>
+    <form action="table.html" method="post">
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required minlength="2" maxlength="30">
+        <div id="firstNameError" class="error-message"></div>
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required minlength="2" maxlength="30">
+        <div id="lastNameError" class="error-message"></div>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="(123) 456-7890">
+        <div id="phoneNumberError" class="error-message"></div>
+
+        <label for="email">Email Address:</label>
+        <input type="email" id="email" name="email" placeholder="abc@northeastern.edu" required>
+        <div id="emailError" class="error-message"></div>
+
+        <label for="address1">Address Line 1:</label>
+        <input type="text" id="address1" name="address1" required minlength="5" maxlength="100">
+        <div id="address1Error" class="error-message"></div>
+
+        <label for="address2">Address Line 2:</label>
+        <input type="text" id="address2" name="address2" maxlength="100">
+        <div id="address2Error" class="error-message"></div>
+
+        <label for="city">City:</label>
+        <input type="text" id="city" name="city" required minlength="2" maxlength="50">
+        <div id="cityError" class="error-message"></div>
+
+        <label for="state">State:</label>
+        <input type="text" id="state" name="state" required minlength="2" maxlength="50">
+        <div id="stateError" class="error-message"></div>
+
+        <label for="zip">Zip Code:</label>
+        <input type="text" id="zip" name="zip" required placeholder="12345">
+        <div id="zipError" class="error-message"></div>
+
+        <label for="jobApplyingFor">Job Applying For:</label>
+        <select id="jobApplyingFor" name="jobApplyingFor" required onchange="toggleCheckbox()">
+            <option value="" disabled selected>Select a job</option>
+            <option value="Software Engineer">Software Engineer</option>
+            <option value="Product Manager">Product Manager</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="UX Designer">UX Designer</option>
+            <option value="Marketing Specialist">Marketing Specialist</option>
+            <option value="Sales Associate">Sales Associate</option>
+        </select>
+        <div id="jobApplyingForError" class="error-message"></div>
+
+        <div id="specialRequirements" style="display: none;">
+            <label>
+                <input type="checkbox" id="specialRequirement" name="specialRequirement" onchange="toggleAdditionalInfo()">
+                <span id="checkboxLabel"></span>
+            </label>
+        </div>
+
+        <div id="additionalInfoDiv" style="display: none;">
+            <label for="additionalInfo">Please Name your Certifications:</label>
+            <input type="text" id="additionalInfo" name="additionalInfo" maxlength="200" required>
+            <div id="additionalInfoError" class="error-message"></div>
+        </div>
+
+        <label for="skills">Select Your Skills:</label>
+        <select id="skills" name="skills" size="7" >
+            <option value="none">None</option>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="python">Python</option>
+            <option value="java">Java</option>
+            <option value="ruby">Ruby</option>
+            <option value="pega">Pega</option>
+            <option value="salesforce">Salesforce</option>
+        </select>
+        <div id="skillsError" class="error-message"></div>
+
+        <button type="submit" class="SubmitApp">Submit Application </button>
+    </form>
+</div>
+
+</body>
+</html>

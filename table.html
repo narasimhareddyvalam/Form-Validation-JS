@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submitted Data Table</title>
+    
+    
+</head>
+<body>
+    <h2>Submitted Job Application Data</h2>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Phone Number</th>
+                <th>Email </th>
+                <th>Address Line 1</th>
+                <th>Address Line 2</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip Code</th>
+                <th>Job Applying For</th>
+                <th>Additional Information</th>
+                <th>Skills</th>
+            </tr>
+        </thead>
+        <tbody id="dataTableBody">
+            
+        </tbody>
+    </table>
+
+    <script>
+       
+        const formData = JSON.parse(localStorage.getItem('formData'));
+
+ 
+        const tableBody = document.getElementById('dataTableBody');
+        for (const key in formData) {
+            if (Array.isArray(formData[key])) {
+                tableBody.innerHTML += `<tr><td>${key}</td><td>${formData[key].join(', ')}</td></tr>`;
+            } else {
+                tableBody.innerHTML += `<tr><td>${key}</td><td>${formData[key]}</td></tr>`;
+            }
+        }
+
+      
+        localStorage.removeItem('formData');
+    </script>
+</body>
+</html>
