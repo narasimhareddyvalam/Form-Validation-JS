@@ -62,7 +62,7 @@
 
         <div id="specialRequirements" style="display: none;">
             <label>
-                <input type="checkbox" id="specialRequirement" name="specialRequirement" onchange="toggleAdditionalInfo()">
+                <input type="checkbox" id="specialRequirement" name="specialRequirement" onchange="toggleAdditionalInfo()" required>
                 <span id="checkboxLabel"></span>
             </label>
         </div>
@@ -74,7 +74,7 @@
         </div>
 
         <label for="skills">Select Your Skills:</label>
-        <select id="skills" name="skills" size="7" >
+        <select id="skills" name="skills" size="7" required >
             <option value="none">None</option>
             <option value="html">HTML</option>
             <option value="css">CSS</option>
